@@ -1,0 +1,94 @@
+{
+  "name": "gamedev-ai-assistant",
+  "displayName": "GameDev AI Assistant",
+  "description": "AI-powered game development assistant for mechanics generation, balancing, and procedural content creation",
+  "version": "1.0.0",
+  "publisher": "Sampark Bhol",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "game development",
+    "AI",
+    "procedural generation",
+    "game mechanics",
+    "game balance",
+    "indie dev"
+  ],
+  "activationEvents": [
+    "onCommand:gamedev-ai.generateMechanic",
+    "onCommand:gamedev-ai.balanceWeapon",
+    "onCommand:gamedev-ai.generateLevel",
+    "onCommand:gamedev-ai.createCharacter",
+    "onCommand:gamedev-ai.openPanel"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gamedev-ai.openPanel",
+        "title": "Open GameDev AI Assistant",
+        "category": "GameDev AI"
+      },
+      {
+        "command": "gamedev-ai.generateMechanic",
+        "title": "Generate Game Mechanic",
+        "category": "GameDev AI"
+      },
+      {
+        "command": "gamedev-ai.balanceWeapon",
+        "title": "Balance Weapon Stats",
+        "category": "GameDev AI"
+      },
+      {
+        "command": "gamedev-ai.generateLevel",
+        "title": "Generate Level Design",
+        "category": "GameDev AI"
+      },
+      {
+        "command": "gamedev-ai.createCharacter",
+        "title": "Create Character Concept",
+        "category": "GameDev AI"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "gamedev-ai.openPanel",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "gamedev-ai.generateMechanic",
+          "group": "gamedev"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "gamedev-ai.openPanel",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "16.x",
+    "typescript": "^4.9.4",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
